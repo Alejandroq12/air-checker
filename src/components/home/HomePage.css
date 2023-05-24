@@ -6,3 +6,26 @@ body {
   font-family: 'Monserrat', sans-serif;
   background-color: rgba(200, 40, 110, 1);
 }
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+.button {
+  background-color: rgba(236, 76, 138, 1);
+  color: white;
+  border-radius: 0;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  position: relative;
+  border: none;
+  width: 100%;
+}
