@@ -1,19 +1,19 @@
 // locations.js
 const LOCATIONS = [
-  { name: 'Ahuachapán', lat: 13.919, lon: -89.845 },
-  { name: 'Cabañas', lat: 13.8777, lon: -88.6275 },
-  { name: 'Chalatenango', lat: 14.033, lon: -88.9337 },
-  { name: 'Cuscatlán', lat: 13.876, lon: -89.0562 },
-  { name: 'La Libertad', lat: 13.4906, lon: -89.3088 },
-  { name: 'La Paz', lat: 13.4652, lon: -88.8383 },
-  { name: 'La Unión', lat: 13.336, lon: -87.8439 },
-  { name: 'Morazán', lat: 13.7696, lon: -88.13 },
+  { name: 'Ahuachapán', lat: 13.9167, lon: -89.8333 },
+  { name: 'Cabañas', lat: 13.86667, lon: -88.75 },
+  { name: 'Chalatenango', lat: 14.0333333, lon: -88.9333333 },
+  { name: 'Cuscatlán', lat: 13.6667, lon: -89.2333 },
+  { name: 'La Libertad', lat: 13.490697, lon: -89.308461 },
+  { name: 'La Paz', lat: 13.484, lon: -88.959 },
+  { name: 'La Unión', lat: 13.33694, lon: -87.84389 },
+  { name: 'Morazán', lat: 13.8, lon: -88.1 },
   { name: 'San Miguel', lat: 13.4833, lon: -88.1833 },
-  { name: 'San Salvador', lat: 13.6929, lon: -89.2182 },
-  { name: 'San Vicente', lat: 13.641, lon: -88.7853 },
-  { name: 'Santa Ana', lat: 13.9942, lon: -89.5638 },
-  { name: 'Sonsonate', lat: 13.7094, lon: -89.73 },
-  { name: 'Usulután', lat: 13.3502, lon: -88.4503 },
+  { name: 'San Salvador', lat: 13.69294, lon: -89.218191 },
+  { name: 'San Vicente', lat: 13.639098, lon: -88.783061 },
+  { name: 'Santa Ana', lat: 13.977828, lon: -89.563912 },
+  { name: 'Sonsonate', lat: 13.711388, lon: -89.72391 },
+  { name: 'Usulután', lat: 13.447063, lon: -88.556531 },
 ];
 
 export default LOCATIONS;
