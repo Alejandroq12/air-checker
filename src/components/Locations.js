@@ -1,15 +1,19 @@
 // locations.js
 const LOCATIONS = [
-  { name: 'New York', lat: 40.7128, lon: -74.006 },
-  { name: 'Los Angeles', lat: 34.0522, lon: -118.2437 },
-  { name: 'London', lat: 51.5074, lon: -0.1278 },
-  { name: 'Tokyo', lat: 35.6895, lon: 139.6917 },
-  { name: 'Sydney', lat: -33.8688, lon: 151.2093 },
-  { name: 'Cape Town', lat: -33.9249, lon: 18.4241 },
-  { name: 'Moscow', lat: 55.7517, lon: 37.6176 },
-  { name: 'Beijing', lat: 39.9042, lon: 116.4074 },
-  { name: 'Rio de Janeiro', lat: -22.9068, lon: -43.1729 },
-  { name: 'Toronto', lat: 43.6511, lon: -79.347 },
+  { name: 'Ahuachapán', lat: 13.919, lon: -89.845 },
+  { name: 'Cabañas', lat: 13.8777, lon: -88.6275 },
+  { name: 'Chalatenango', lat: 14.033, lon: -88.9337 },
+  { name: 'Cuscatlán', lat: 13.876, lon: -89.0562 },
+  { name: 'La Libertad', lat: 13.4906, lon: -89.3088 },
+  { name: 'La Paz', lat: 13.4652, lon: -88.8383 },
+  { name: 'La Unión', lat: 13.336, lon: -87.8439 },
+  { name: 'Morazán', lat: 13.7696, lon: -88.13 },
+  { name: 'San Miguel', lat: 13.4833, lon: -88.1833 },
+  { name: 'San Salvador', lat: 13.6929, lon: -89.2182 },
+  { name: 'San Vicente', lat: 13.641, lon: -88.7853 },
+  { name: 'Santa Ana', lat: 13.9942, lon: -89.5638 },
+  { name: 'Sonsonate', lat: 13.7094, lon: -89.73 },
+  { name: 'Usulután', lat: 13.3502, lon: -88.4503 },
 ];
 
 export default LOCATIONS;
