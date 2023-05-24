@@ -18,3 +18,24 @@ const HomePage = () => {
     (location) => location.name.toLowerCase().includes(filter.toLowerCase()),
   );
 
+  return (
+    <div>
+      <h1>HomePage</h1>
+      <Filter value={filter} onChange={handleFilterChange} />
+      <div>
+        {filteredLocations.map((location) => (
+          <Link key={location.name} to={`/details/${location.name}`}>
+            <button
+              type="button"
+              onClick={() => dispatch(fetchCurrentAirPollution(location))}
+            >
+              {location.name}
+            </button>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;
