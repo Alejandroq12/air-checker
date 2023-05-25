@@ -15,6 +15,25 @@ h1 {
   margin: 10px 0 10px 7px;
 }
 
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 .detail {
   display: flex;
   justify-content: space-between;
@@ -26,11 +45,11 @@ h1 {
 }
 
 .detail:nth-child(odd) {
-  background-color: rgba(236, 76, 138, 1);
+  background-color: rgba(200, 40, 110, 1);
 }
 
 .detail:nth-child(even) {
-  background-color: rgba(200, 40, 110, 1);
+  background-color: rgba(236, 76, 138, 1);
 }
 
 @media screen and (max-width: 600px) {
