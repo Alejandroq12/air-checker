@@ -1,11 +1,14 @@
 // Filter.js
 import PropTypes from 'prop-types';
+import './Filter.css';
 
 const Filter = ({ value, onChange }) => (
-  <label htmlFor="filter">
-    Filter by name:
-    <input id="filter" type="text" value={value} onChange={onChange} />
-  </label>
+  <div className="filter-container">
+    <label htmlFor="filter" className="filter-label">
+      Filter by name:
+      <input className="filter-input" id="filter" type="text" value={value} onChange={onChange} />
+    </label>
+  </div>
 );
 
 Filter.propTypes = {
