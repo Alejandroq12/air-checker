@@ -1,0 +1,25 @@
+.filter-container {
+  margin: 10px 0 10px 4px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.filter-label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.filter-input {
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filter-input:focus {
+  border-color: #ff4d8f;
+}
