@@ -9,3 +9,34 @@ body {
 h1 {
   font-family: 'Lato', sans-serif;
 }
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .detail {
+    flex-direction: column;
+  }
+}
+
+.banner2 {
+  background-image: url('banner.svg');
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner2::after {
+  content: '';
+  background: rgba(236, 76, 138, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
