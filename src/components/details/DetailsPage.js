@@ -27,7 +27,7 @@ const DetailsPage = () => {
 
   return (
     <div>
-      <div className="banner" />
+      <div className="banner2" />
       <h1>Details Page</h1>
       <h2>{id}</h2>
 
