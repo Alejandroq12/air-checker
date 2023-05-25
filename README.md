@@ -15,7 +15,7 @@
 
 - [Air Checker](#air-checker)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖Bookstore ](#bookstore-)
+- [📖Air Checker ](#air-checker-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -37,9 +37,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖Bookstore <a name="about-project"></a>
+# 📖Air Checker <a name="about-project"></a>
 
-A modern, responsive bookstore application built with React, Redux, and a bookstore API. The app allows users to browse, add, and remove books, showcasing efficient state management and real-time data handling.
+"Air Checker" is a web application designed for real-time monitoring of air quality in various locations across El Salvador. Developed using React.js, Redux, and Redux-Toolkit, the application displays air quality data that includes the Air Quality Index (AQI) and concentrations of several pollutants, such as Carbon Monoxide and Nitrogen Dioxide. State management is executed through Redux, utilizing async-thunk middleware for API calls and adopting the latest hooks-based React approach for functional components.
+
+The application is mobile-friendly and has been tested with unit tests constructed using Jest and the React Testing Library. To ensure scalability and maintainability, modular and reusable components have been integrated throughout the application. Styling with CSS has been employed to provide a modern, responsive design, enhancing user interaction.
 
 ## 🛠 Built With <a name="built-with"></a>
 HTML,
@@ -47,7 +49,8 @@ CSS,
 JavaScript,
 React.js,
 Redux Toolkit,
-Axios.
+Axios,
+Jest.
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -60,6 +63,7 @@ Axios.
     <li><a href="https://react.dev/">React.js</a></li>
     <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
     <li><a href="https://axios-http.com/docs/intro">Axios</a></li>
+    <li><a href="https://jestjs.io/">Jest</a></li>
   </ul>
 </details>
 
@@ -81,10 +85,9 @@ Axios.
 
 ### Key Features <a name="key-features"></a>
 
-- **Responsive design**
-- **Browse, add, and remove books from the collection**
-- **State management with Redux Toolkit**
-- **API integration with a bookstore API**
+- **Mobile-friendly design: The application is designed with a responsive layout, ensuring a great user experience across all devices, including smartphones and tablets.**
+- **Scalable and maintainable architecture: The use of modular and reusable components within the application ensures it can be easily scaled and maintained in the future.**
+- **Comprehensive testing: The application's functionality has been rigorously tested using Jest and the React Testing Library, ensuring robust and reliable performance for users.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +95,7 @@ Axios.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://candid-quokka-8e7e31.netlify.app/)
+- [Live Demo Link](https://airchecker.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,13 +121,13 @@ In order to run this project you need:
 Clone this repository to your desired folder or download the Zip folder:
 
 ```
-https://github.com/Alejandroq12/bookstore.git
+https://github.com/Alejandroq12/air-checker
 
 ```
 
 - Navigate to the location of the folder in your machine:
 
-**``you@your-Pc-name:~$ cd bookstore``**
+**``you@your-Pc-name:~$ cd air-checker``**
 
 ### Install
 
@@ -153,12 +156,15 @@ npx stylelint "**/*.{css,scss}"
 ```
 npx eslint "**/*.{js,jsx}"
 ```
-
+Run tests with Jest
+```
+npm test
+```
 ### Deployment <a name="deployment"></a>
 
-You can deploy this project using: GitHub Pages,
+You can deploy this project using: Render,
 - I used Netlify Pages to deploy my website.
-- For more information about deployment on Netlify see "[Netlify](https://www.netlify.com/)".
+- For more information about deployment on Netlify see "[Netlify](https://render.com/)".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,7 +185,7 @@ You can deploy this project using: GitHub Pages,
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **I will implement more pages**
-- [ ] **I will create statistics acordding to individual users**
+- [ ] **I will create statistics according to each city**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,7 +211,9 @@ If you like this project give me a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I want to thank all my colleagues that share knowledge with and inspired to to improve each day.
+This application was inspired by the original design idea by Nelson Sakwa on Behance. The Creative Commons license of the design requires the appropriate credit to the original author.
+
+[DESIGN LINK](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
