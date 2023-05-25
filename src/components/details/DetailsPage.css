@@ -18,7 +18,7 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .detail {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
