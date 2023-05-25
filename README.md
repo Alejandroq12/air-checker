@@ -150,7 +150,7 @@ npm install
 
 To run the project, follow these instructions:
 
-- After Cloning this repo to your local machine.
+- After cloning this repo to your local machine.
 - You must use `npm start` command in terminal to run this at the localhost.
 
 ### Run tests
@@ -172,7 +172,7 @@ npm test
 ### Deployment <a name="deployment"></a>
 
 You can deploy this project using: Render,
-- I used Netlify Pages to deploy my website.
+- I used Render Pages to deploy my website.
 - For more information about deployment on Netlify see "[Netlify](https://render.com/)".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
