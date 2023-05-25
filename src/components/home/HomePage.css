@@ -64,7 +64,7 @@ h1 {
 
 .banner {
   background-image: url('banner.svg');
-  height: 200px;
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,5 +85,59 @@ h1 {
   .button {
     width: 100%;
     max-height: 220px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .banner {
+    background-image: url('banner.svg');
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .container > *:nth-child(4n-1) .button,
+  .container > *:nth-child(4n-2) .button {
+    background-color: rgba(236, 76, 138, 1);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .button {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
+  .banner {
+    background-image: url('banner.svg');
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 20px;
   }
 }
