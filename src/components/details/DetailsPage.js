@@ -28,8 +28,9 @@ const DetailsPage = () => {
   return (
     <div>
       <div className="banner2" />
-      <h1>Details Page</h1>
-      <h2>{id}</h2>
+      <h2 className="city">
+        {`City: ${id}`}
+      </h2>
 
       <div className="detail">
         <span>Air Quality Index:</span>
@@ -75,27 +76,33 @@ const DetailsPage = () => {
         <span>Ammonia:</span>
         <span>{`${item.components.nh3} µg/m³`}</span>
       </div>
-
-      <h2>Explanation</h2>
-      <p>
-        {`These numbers indicate the concentration of different pollutants in the
+      <div className="info">
+        <h2 className="h2">Explanation</h2>
+        <p>
+          {`These numbers indicate the concentration of different pollutants in the
         air. A high concentration could potentially harm your health, especially
         if you are exposed to it for a long period.`}
-      </p>
+        </p>
+      </div>
 
-      <h2>What can we do to improve it?</h2>
-      <p>
-        {`Reducing the usage of fossil fuels, managing waste properly, reducing
+      <div className="info">
+        <h2 className="h2">What can we do to improve it?</h2>
+        <p>
+          {`Reducing the usage of fossil fuels, managing waste properly, reducing
         deforestation, and increasing the use of renewable energy sources can
         help in improving air quality.`}
-      </p>
-      <h2>Health precautions</h2>
-      <p>
-        {`When air quality is poor, you can reduce your exposure by staying
+        </p>
+      </div>
+
+      <div className="info">
+        <h2 className="h2">Health precautions</h2>
+        <p>
+          {`When air quality is poor, you can reduce your exposure by staying
         indoors with windows closed. Use air purifiers indoors if available.
         Avoid strenuous outdoor activities. People with respiratory conditions,
         elderly, children and pregnant women should be particularly cautious.`}
-      </p>
+        </p>
+      </div>
 
       <Link to="/">Back</Link>
     </div>
