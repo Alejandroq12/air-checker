@@ -31,6 +31,7 @@ const DetailsPage = () => {
       <h2 className="city">
         {`City: ${id}`}
       </h2>
+      <Link className="back-link" to="/">Back</Link>
 
       <div className="detail">
         <span>Air Quality Index:</span>
@@ -104,7 +105,6 @@ const DetailsPage = () => {
         </p>
       </div>
 
-      <Link to="/">Back</Link>
     </div>
   );
 };
