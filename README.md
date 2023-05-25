@@ -20,6 +20,7 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
+  - [😎 Loom walkthrough ](#-loom-walkthrough-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -96,6 +97,14 @@ Jest.
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://airchecker.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LOOM WALKTHROUGH -->
+
+## 😎 Loom walkthrough <a name="loom-walkthrough"></a>
+
+- [Loom walkthrough Link](https://www.loom.com/share/a863f031fa284557b40d31ee47e01fbe)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
