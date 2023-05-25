@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchCurrentAirPollution } from '../airPollutionSlice';
 import LOCATIONS from '../Locations';
-import Filter from '../Filter';
+import Filter from '../filter/Filter';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -22,7 +22,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="banner" />
-      <Filter className="search" value={filter} onChange={handleFilterChange} />
+      <Filter value={filter} onChange={handleFilterChange} />
       <div className="container">
         {filteredLocations.map((location) => (
           <Link key={location.name} to={`/details/${location.name}`}>
