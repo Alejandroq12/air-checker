@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchCurrentAirPollution } from './airPollutionSlice';
-import LOCATIONS from './Locations';
-import Filter from './Filter';
+import { fetchCurrentAirPollution } from '../airPollutionSlice';
+import LOCATIONS from '../Locations';
+import Filter from '../filter/Filter';
+import './HomePage.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -20,12 +21,13 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>HomePage</h1>
+      <div className="banner" />
       <Filter value={filter} onChange={handleFilterChange} />
-      <div>
+      <div className="container">
         {filteredLocations.map((location) => (
           <Link key={location.name} to={`/details/${location.name}`}>
             <button
+              className="button"
               type="button"
               onClick={() => dispatch(fetchCurrentAirPollution(location))}
             >
