@@ -10,10 +10,27 @@ h1 {
   font-family: 'Lato', sans-serif;
 }
 
+.city {
+  color: yellow;
+  margin: 10px 0 10px 7px;
+}
+
 .detail {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 0 0;
+  padding: 35px 8px 35px 8px;
+  border-radius: 0px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.detail:nth-child(odd) {
+  background-color: rgba(236, 76, 138, 1);
+}
+
+.detail:nth-child(even) {
+  background-color: rgba(200, 40, 110, 1);
 }
 
 @media screen and (max-width: 600px) {
@@ -39,4 +56,20 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.info {
+  padding: 20px;
+  background-color: rgba(236, 76, 138, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.info h2 {
+  color: yellow;
+}
+
+.info p {
+  color: white;
+  line-height: 1.6;
 }
