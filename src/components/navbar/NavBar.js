@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaMicrophone, FaCog } from 'react-icons/fa';
 import './NavBar.css';
 

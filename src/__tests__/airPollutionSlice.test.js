@@ -1,4 +1,3 @@
-// airPollutionSlice.test.js
 import { configureStore } from '@reduxjs/toolkit';
 import airPollutionReducer, { fetchCurrentAirPollution, selectData } from '../components/airPollutionSlice';
 import { getCurrentAirPollution } from '../api';

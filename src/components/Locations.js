@@ -1,4 +1,3 @@
-// locations.js
 const LOCATIONS = [
   { name: 'Ahuachapán', lat: 13.9167, lon: -89.8333 },
   { name: 'Cabañas', lat: 13.86667, lon: -88.75 },

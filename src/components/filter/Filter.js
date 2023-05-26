@@ -1,4 +1,3 @@
-// Filter.js
 import PropTypes from 'prop-types';
 import './Filter.css';
 
