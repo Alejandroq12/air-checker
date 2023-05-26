@@ -1,0 +1,35 @@
+.navBar {
+  background-color: rgba(200, 40, 110, 1);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(150, 30, 90, 1);
+  transition: all 0.5s ease;
+}
+
+.navBar .logo {
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.nav-icon {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-icon:hover {
+  color: #ddd;
+}
