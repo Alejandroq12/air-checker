@@ -21,7 +21,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="banner" />
+      <div className="banner">
+        <div className="banner-title">Air pollution levels by city in El Salvador.</div>
+      </div>
       <Filter value={filter} onChange={handleFilterChange} />
       <div className="container">
         {filteredLocations.map((location) => (

@@ -69,7 +69,7 @@ h1 {
 
 .banner2::after {
   content: '';
-  background: rgba(236, 76, 138, 0.6);
+  background: rgba(236, 76, 138, 0.4);
   position: absolute;
   top: 0;
   bottom: 0;

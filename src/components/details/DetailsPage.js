@@ -27,11 +27,15 @@ const DetailsPage = () => {
 
   return (
     <div>
-      <div className="banner2" />
-      <h2 className="city">
-        {`City: ${id}`}
-      </h2>
-      <Link className="back-link" to="/">Back</Link>
+      <div className="banner2">
+        <div className="banner-title">
+          Air pollution levels by city in El Salvador.
+        </div>
+      </div>
+      <h2 className="city">{`City: ${id}`}</h2>
+      <Link className="back-link" to="/">
+        Back
+      </Link>
 
       <div className="detail">
         <span>Air Quality Index:</span>
@@ -104,7 +108,6 @@ const DetailsPage = () => {
         elderly, children and pregnant women should be particularly cautious.`}
         </p>
       </div>
-
     </div>
   );
 };
