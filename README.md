@@ -104,7 +104,7 @@ Jest.
 
 ## 😎 Loom walkthrough <a name="loom-walkthrough"></a>
 
-- [Loom walkthrough Link](https://www.loom.com/share/a863f031fa284557b40d31ee47e01fbe)
+- [Loom walkthrough Link](https://www.loom.com/share/82f1bf98f89540f39bd454b7bbf991fb)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
