@@ -40,7 +40,7 @@
 
 # 📖Air Checker <a name="about-project"></a>
 
-"Air Checker" is a web application designed for real-time monitoring of air quality in various locations across El Salvador. Developed using React.js, Redux, and Redux-Toolkit, the application displays air quality data that includes the Air Quality Index (AQI) and concentrations of several pollutants, such as Carbon Monoxide and Nitrogen Dioxide. State management is executed through Redux, utilizing async-thunk middleware for API calls and adopting the latest hooks-based React approach for functional components.
+Air Checker is a web application designed for real-time monitoring of air quality in various locations across El Salvador. Developed using React.js, Redux, and Redux-Toolkit, the application displays air quality data that includes the Air Quality Index (AQI) and concentrations of several pollutants, such as Carbon Monoxide and Nitrogen Dioxide. State management is executed through Redux, utilizing async-thunk middleware for API calls and adopting the latest hooks-based React approach for functional components.
 
 The application is mobile-friendly and has been tested with unit tests constructed using Jest and the React Testing Library. To ensure scalability and maintainability, modular and reusable components have been integrated throughout the application. Styling with CSS has been employed to provide a modern, responsive design, enhancing user interaction.
 
