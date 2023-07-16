@@ -6,7 +6,6 @@
     <img src="./public/logo.png" alt="logo" width="650"  height="auto" />
   <br/>
   <h3><b>Air Checker</b></h3>
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
