@@ -85,7 +85,7 @@ Jest.
 
 ### Key Features <a name="key-features"></a>
 
-- **Mobile-friendly design: The application is designed with a responsive layout, ensuring a great user experience across all devices, including smartphones and tablets.**
+- **Mobile-friendly design: The application was designed with a responsive layout, ensuring a great user experience across all devices, including smartphones and tablets.**
 - **Scalable and maintainable architecture: The use of modular and reusable components within the application ensures it can be easily scaled and maintained in the future.**
 - **Comprehensive testing: The application's functionality has been rigorously tested using Jest and the React Testing Library, ensuring robust and reliable performance for users.**
 
