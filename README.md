@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="./public/logo.png" alt="logo" width="650"  height="auto" />
+    <img src="./public/logo.png" alt="logo" width="700"  height="auto" />
   <br/>
   <h3><b>Air Checker</b></h3>
 </div>
