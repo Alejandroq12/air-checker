@@ -7,9 +7,7 @@
   <br/>
   <h3><b>Air Checker</b></h3>
 </div>
-
 <!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [Air Checker](#air-checker)
