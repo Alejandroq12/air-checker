@@ -1,242 +1,139 @@
 # Air Checker
 
-<a name="readme-top"></a>
+> A real time air quality monitoring web app for cities across El Salvador. Built with React, Redux Toolkit, and tested with Jest. Deployed and in use at [airchecker.onrender.com](https://airchecker.onrender.com/).
+
+<p>
+  <img src="https://img.shields.io/badge/status-live-brightgreen" alt="status">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/Redux%20Toolkit-764ABC?logo=redux&logoColor=white" alt="Redux Toolkit">
+  <img src="https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white" alt="Jest">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
+</p>
 
 <div align="center">
-    <img src="./public/logo.png" alt="logo" width="700"  height="auto" />
-  <br/>
-  <h3><b>Air Checker</b></h3>
+  <img src="./public/logo.png" alt="Air Checker logo" width="600" />
 </div>
 
-<!-- TABLE OF CONTENTS -->
-# 📗 Table of Contents
+**Live site:** [airchecker.onrender.com](https://airchecker.onrender.com/) · **Walkthrough:** [Loom](https://www.loom.com/share/82f1bf98f89540f39bd454b7bbf991fb)
 
-- [Air Checker](#air-checker)
-- [📗 Table of Contents](#-table-of-contents)
-- [📖Air Checker ](#air-checker-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
-  - [😎 Loom walkthrough ](#-loom-walkthrough-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-    - [Deployment ](#deployment-)
-  - [👥 Author ](#-author-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [❓ FAQ ](#-faq-)
-  - [📝 License ](#-license-)
+---
 
-<!-- PROJECT DESCRIPTION -->
+## The Problem
 
-# 📖Air Checker <a name="about-project"></a>
+Air quality data is publicly available for most countries, but in El Salvador it is fragmented across raw API responses and not presented in a way that ordinary people can act on. Residents who want to know whether the air outside is safe for running, for their children, or for someone with asthma have to interpret Air Quality Index numbers and pollutant concentrations with no context. I wanted to build a simple web app that pulls this data for Salvadoran cities specifically and presents it in a way that makes the answer obvious in one glance.
 
-Air Checker is a web application designed for real-time monitoring of air quality in various locations across El Salvador. Developed using React.js, Redux, and Redux-Toolkit, the application displays air quality data that includes the Air Quality Index (AQI) and concentrations of several pollutants, such as Carbon Monoxide and Nitrogen Dioxide. State management is executed through Redux, utilizing async-thunk middleware for API calls and adopting the latest hooks-based React approach for functional components.
+## The Approach
 
-The application is mobile-friendly and has been tested with unit tests constructed using Jest and the React Testing Library. To ensure scalability and maintainability, modular and reusable components have been integrated throughout the application. Styling with CSS has been employed to provide a modern, responsive design, enhancing user interaction.
+A React single page application that fetches real time air quality data for multiple cities in El Salvador and displays the Air Quality Index along with concentrations of individual pollutants like Carbon Monoxide and Nitrogen Dioxide. State is managed through Redux Toolkit, with async thunk middleware handling the API calls. The app is mobile first, because most people check air quality on a phone, not a desktop. Unit tests built with Jest and React Testing Library cover the components and the Redux slices.
 
-## 🛠 Built With <a name="built-with"></a>
-HTML,
-CSS,
-JavaScript,
-React.js,
-Redux Toolkit,
-Axios,
-Jest.
+---
 
-### Tech Stack <a name="tech-stack"></a>
+## Key Decisions
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
-    <li><a href="https://react.dev/">React.js</a></li>
-    <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
-    <li><a href="https://axios-http.com/docs/intro">Axios</a></li>
-    <li><a href="https://jestjs.io/">Jest</a></li>
-  </ul>
-</details>
+### Why Redux Toolkit over Context API
 
-<details>
-  <summary>Package Manager</summary>
-  <ul>
-    <li><a href="https://www.npmjs.com/">npm</a></li>
-  </ul>
-</details>
-<details>
-  <summary>Linters</summary>
-  <ul>
-      <li><a href="https://eslint.org/">ESLint</a></li>
-      <li><a href="https://stylelint.io/">Stylelint</a></li>
-  </ul>
-</details>
+The app has multiple slices of server state that update independently: the list of cities, the currently selected city, and the pollutant data for each. Context API works for shallow state, but it re renders everything subscribed to a context when any value changes. Redux Toolkit with `createSlice` and selectors gives fine grained subscriptions and makes async flows explicit through `createAsyncThunk`. For an app that will grow more slices over time, this was the more durable choice.
 
-<!-- Features -->
+### Why async thunk instead of RTK Query
 
-### Key Features <a name="key-features"></a>
+RTK Query would have eliminated more boilerplate for the API layer, but it introduces its own caching model and patterns that are harder to reason about when debugging. Async thunks are closer to the underlying promise based fetch call, which made the data flow easier to trace and test. If the app grows to the point where cache invalidation and request deduplication become a real cost, migrating to RTK Query is straightforward.
 
-- **Mobile-friendly design: The application was designed with a responsive layout, ensuring a great user experience across all devices, including smartphones and tablets.**
-- **Scalable and maintainable architecture: The use of modular and reusable components within the application ensures it can be easily scaled and maintained in the future.**
-- **Comprehensive testing: The application's functionality has been rigorously tested using Jest and the React Testing Library, ensuring robust and reliable performance for users.**
+### Why component level unit tests, not end to end
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+The app is small and the business logic lives in the Redux slices and the presentational components. Testing at that level with Jest and React Testing Library catches the meaningful regressions. Running Cypress or Playwright for end to end would have added setup complexity and slow CI runs without catching much that unit tests miss at this scale.
 
-<!-- LIVE DEMO -->
+### Why deploy on Render
 
-## 🚀 Live Demo <a name="live-demo"></a>
+Render provides free static site hosting with automatic HTTPS and GitHub integration for continuous deployment. For a portfolio project with modest traffic, paying for Vercel or Netlify's paid tiers would be premature. The deployment is a git push with no additional configuration.
 
-- [Live Demo Link](https://airchecker.onrender.com/)
+---
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Tech Stack
 
-<!-- LOOM WALKTHROUGH -->
+| Layer | Technology |
+|-------|-----------|
+| Framework | React |
+| State management | Redux Toolkit with async thunk |
+| HTTP client | Axios |
+| Testing | Jest, React Testing Library |
+| Linting | ESLint, Stylelint |
+| Build | Babel, Webpack (via CRA) |
+| CI | GitHub Actions |
+| Hosting | Render |
+| Data source | [public air quality API, update with specific source] |
 
-## 😎 Loom walkthrough <a name="loom-walkthrough"></a>
+---
 
-- [Loom walkthrough Link](https://www.loom.com/share/82f1bf98f89540f39bd454b7bbf991fb)
+## Running Locally
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-- A web browser to view output e.g. [Google Chrome](https://www.google.com/chrome/).
-- An IDE e.g [Visual studio code](https://code.visualstudio.com/).
-- `node` should be installed in your local machine, [node website](https://nodejs.org/en/download/).
-- Install the `npm` package manager use this [to install both node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-- [A terminal](https://code.visualstudio.com/docs/terminal/basics).
-
-### Setup
-
-Clone this repository to your desired folder or download the Zip folder:
-
-```
-https://github.com/Alejandroq12/air-checker
-
-```
-
-- Navigate to the location of the folder in your machine:
-
-**``you@your-Pc-name:~$ cd air-checker``**
-
-### Install
-
-To install all dependencies, run:
-
-```
+```bash
+git clone https://github.com/Alejandroq12/air-checker.git
+cd air-checker
 npm install
+npm start
 ```
 
-### Usage
+The app will be available at `http://localhost:3000`.
 
-To run the project, follow these instructions:
+### Environment variables
 
-- After cloning this repo to your local machine.
-- You must use `npm start` command in terminal to run this at the localhost.
+If the API requires a key, copy `.env.example` to `.env` and fill in the value before running.
 
-### Run tests
+### Running tests and linters
 
-To run tests, run the following command:
-
-- Track CSS linter errors run:
-```
+```bash
+npm test
+npx eslint "**/*.{js,jsx}"
 npx stylelint "**/*.{css,scss}"
 ```
-- Track JavaScript linter errors run:
+
+---
+
+## Project Structure
+
 ```
-npx eslint "**/*.{js,jsx}"
+public/         Static assets including logo and favicon
+src/
+  components/   React components (presentation and layout)
+  redux/        Redux slices, async thunks, store configuration
+  services/     API client and data transformation
+  __tests__/    Jest unit tests
+babel.config.js
 ```
-Run tests with Jest
-```
-npm test
-```
-### Deployment <a name="deployment"></a>
 
-You can deploy this project using: Render,
-- I used Render Pages to deploy my website.
-- For more information about deployment on Netlify see "[Netlify](https://render.com/)".
+---
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## What I Learned
 
-<!-- AUTHORS -->
+Working on this project clarified for me when a state management library actually earns its weight. My first draft used local component state and prop drilling, and it worked for two or three views. As soon as I added a second city with a different set of pollutants, the prop threading became unmaintainable. Moving the data layer into Redux Toolkit fixed this cleanly and taught me a simple heuristic I apply now: local state until state starts traveling through more than two components, then a store. That heuristic now informs how I think about service layers and dependency scoping in backend work.
 
-## 👥 Author <a name="authors"></a>
+---
 
-👤 **Julio Quezada**
+## Roadmap
 
-- GitHub: [Alejandroq12](https://github.com/Alejandroq12)
-- Twitter: [@JulioAle54](https://twitter.com/JulioAle54)
-- LinkedIn: [Julio Quezada](https://www.linkedin.com/in/quezadajulio/)
+* Add historical air quality graphs per city
+* Expand coverage to major Central American capitals
+* Add browser notifications for dangerous AQI thresholds
+* Migrate to Vite for faster local builds
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+---
 
-<!-- FUTURE FEATURES -->
+## About Me
 
-## 🔭 Future Features <a name="future-features"></a>
+I am Julio Quezada, a backend .NET developer from El Salvador with experience building production systems at national scale. I specialize in C#, ASP.NET Core, and PostgreSQL.
 
-- [ ] **I will implement more pages**
-- [ ] **I will create statistics according to each city**
+**Open to remote backend roles** across US, EU, and LATAM time zones.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[Portfolio](https://www.quezadajulio.com) · [LinkedIn](https://www.linkedin.com/in/jqdeveloper) · qjuliodev@gmail.com
 
-<!-- CONTRIBUTING -->
+---
 
-## 🤝 Contributing <a name="contributing"></a>
+## Acknowledgments
 
-Contributions, issues, and feature requests are welcome!
+The visual design was inspired by Nelson Sakwa's "Ballhead App" concept on Behance, used under the original Creative Commons license. [Design reference](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
 
-Feel free to check the [issues page](../../issues/).
+---
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## License
 
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-If you like this project give me a star ⭐️
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-This application was inspired by the original design idea by Nelson Sakwa on Behance. The Creative Commons license of the design requires the appropriate credit to the original author.
-
-[DESIGN LINK](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ  -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **Did you created this project from zero?**
-
-  - Of course, as if it were a real life job scenario.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [LICENSE](./LICENSE) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+MIT. See [LICENSE](./LICENSE) for details.
